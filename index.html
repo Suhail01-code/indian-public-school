@@ -22,14 +22,13 @@
       scroll-behavior: smooth;
     }
 
-    /* Container */
     .container {
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* HEADER + NAVIGATION */
+    /* Header */
     .header {
       background: white;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
@@ -46,7 +45,7 @@
       flex-wrap: wrap;
     }
 
-    /* Logo area: visible in right corner (on desktop, right side) */
+    /* Logo */
     .logo-area {
       order: 2;
       display: flex;
@@ -60,16 +59,24 @@
 
     .logo-icon {
       background: #c2410c;
-      width: 48px;
-      height: 48px;
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 26px;
+      font-size: 18px;
       color: white;
       font-family: monospace;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .logo-icon small {
+      font-size: 10px;
+      font-weight: 500;
     }
 
     .logo-text {
@@ -80,12 +87,13 @@
 
     .logo-text span {
       display: block;
-      font-size: 0.85rem;
-      font-weight: 500;
+      font-size: 0.75rem;
+      font-weight: 600;
       color: #b45309;
+      letter-spacing: 0.5px;
     }
 
-    /* nav menu */
+    /* Navigation */
     .nav-links {
       order: 1;
       display: flex;
@@ -106,7 +114,7 @@
       color: #e67e22;
     }
 
-    /* mobile responsive */
+    /* Mobile */
     @media (max-width: 780px) {
       .nav-bar {
         flex-direction: column;
@@ -125,7 +133,7 @@
       }
     }
 
-    /* Hero Section */
+    /* Hero */
     .hero {
       background: linear-gradient(135deg, #fff6e8 0%, #ffe6cc 100%);
       padding: 60px 0 50px;
@@ -200,6 +208,8 @@
       font-weight: 600;
       cursor: pointer;
       transition: 0.2s;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .btn-outline:hover {
@@ -231,7 +241,7 @@
       border-radius: 4px;
     }
 
-    /* Why Us Cards */
+    /* Why Us */
     .why-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -260,10 +270,10 @@
       color: #4b5563;
     }
 
-    /* Teacher / Staff Section */
+    /* Teachers */
     .teachers-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
       margin-top: 20px;
     }
@@ -303,7 +313,7 @@
       margin-top: 10px;
     }
 
-    /* Contact & Info */
+    /* Contact */
     .contact-flex {
       display: flex;
       flex-wrap: wrap;
@@ -329,79 +339,6 @@
       font-size: 1.4rem;
     }
 
-    /* Admission Form Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-    }
-    .modal-content {
-      background: white;
-      max-width: 500px;
-      width: 90%;
-      border-radius: 40px;
-      padding: 32px 28px;
-      position: relative;
-      animation: fadeSlide 0.3s ease;
-    }
-    @keyframes fadeSlide {
-      from { opacity: 0; transform: translateY(-30px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    .close-modal {
-      position: absolute;
-      right: 24px;
-      top: 20px;
-      font-size: 28px;
-      cursor: pointer;
-      color: #888;
-    }
-    .modal-content h3 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-    }
-    .form-group {
-      margin-bottom: 18px;
-    }
-    .form-group input, .form-group select {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 60px;
-      border: 1px solid #ddd;
-      font-family: inherit;
-      outline: none;
-    }
-    .form-group label {
-      font-weight: 600;
-      display: block;
-      margin-bottom: 6px;
-    }
-    .submit-enroll {
-      background: #c2410c;
-      color: white;
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 40px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .success-msg {
-      background: #e0f2e9;
-      padding: 12px;
-      border-radius: 32px;
-      text-align: center;
-      color: #2b6e3c;
-      margin-top: 15px;
-      display: none;
-    }
-
     footer {
       background: #1f2a2e;
       color: #ddd;
@@ -417,11 +354,25 @@
         font-size: 1.8rem;
       }
     }
+
+    .google-form-btn {
+      background: #c2410c;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-decoration: none;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
 
-<!-- Header & Logo visible on right corner (logo-area) -->
 <header class="header">
   <div class="container nav-bar">
     <ul class="nav-links">
@@ -432,27 +383,29 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="logo-area">
-      <div class="logo-icon">GOD</div>
+      <div class="logo-icon">
+        GOD
+        <small>IPS</small>
+      </div>
       <div class="logo-text">
-        INDIAN PUBLIC SCHOOL <span>ONE • NURSERY to 8th</span>
+        INDIAN PUBLIC SCHOOL <span>Pre-School to Middle School (Nursery - Class 8)</span>
       </div>
     </div>
   </div>
 </header>
 
 <main>
-  <!-- Hero Section with school info -->
   <section id="home" class="hero">
     <div class="container hero-grid">
       <div class="hero-content">
         <h1>INDIAN PUBLIC SCHOOL</h1>
-        <div class="tagline">Where Knowledge Meets Values | Nursery – Class 8</div>
+        <div class="tagline">Where Knowledge Meets Values | Quality Education Since 2026</div>
         <div class="address">
           <i class="fas fa-map-marker-alt" style="margin-right: 8px; color:#c2410c;"></i> 
           Village Rasulpur Dabheri, Block Budhana, Dist Muzaffarnagar, Uttar Pradesh, India
         </div>
         <div class="btn-group">
-          <button class="btn-primary" id="enrollBtn"><i class="fas fa-pen-fancy"></i> Enroll Now</button>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfi01TkakhZlIvVy1YdjhJOyI0qVzgh_5YBl3lKGynuRij91w/viewform?usp=pp_url" target="_blank" class="google-form-btn"><i class="fas fa-pen-fancy"></i> Enroll Now</a>
           <a href="#contact" class="btn-outline">Contact Info →</a>
         </div>
       </div>
@@ -465,7 +418,6 @@
     </div>
   </section>
 
-  <!-- About Us Section (opened recently: 10th Feb 2026) -->
   <section id="about">
     <div class="container">
       <h2 class="section-title">About Us</h2>
@@ -477,7 +429,6 @@
     </div>
   </section>
 
-  <!-- Why Us Section: Good environment, experienced teachers + extras -->
   <section id="whyus">
     <div class="container">
       <h2 class="section-title">Why Us</h2>
@@ -492,7 +443,6 @@
     </div>
   </section>
 
-  <!-- Staff / Teachers information -->
   <section id="teachers">
     <div class="container">
       <h2 class="section-title">Our Dedicated Educators</h2>
@@ -511,19 +461,11 @@
           <p>Teaches all subjects with interdisciplinary approach.</p>
           <div class="teacher-contact"><i class="fas fa-phone-alt"></i> 6397906258</div>
         </div>
-        <div class="teacher-card">
-          <i class="fas fa-book-open"></i>
-          <h3>Israr Sir</h3>
-          <div class="teacher-role">All-Rounder Faculty</div>
-          <p>Passionate about science, social studies & overall development.</p>
-          <div class="teacher-contact"><i class="fas fa-phone-alt"></i> 7060456608</div>
-        </div>
       </div>
       <p style="margin-top: 24px; text-align: center; font-style: italic;">* Our teachers are committed to excellence & personalized guidance.</p>
     </div>
   </section>
 
-  <!-- Contact + email & phones + location -->
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Contact Us</h2>
@@ -532,7 +474,6 @@
           <p><i class="fas fa-envelope"></i> <strong>Email:</strong> indianpublicschooldabheri@gmail.com</p>
           <p><i class="fas fa-phone-alt"></i> <strong>Ahsan Sir (Mathematician):</strong> 7055341433</p>
           <p><i class="fas fa-phone-alt"></i> <strong>Nazim Sir (Allrounder):</strong> 6397906258</p>
-          <p><i class="fas fa-phone-alt"></i> <strong>Israr Sir (Allrounder):</strong> 7060456608</p>
           <p><i class="fas fa-map-pin"></i> <strong>Address:</strong> Village Rasulpur Dabheri, Block Budhana, Dist Muzaffarnagar, Uttar Pradesh – India</p>
           <p><i class="fas fa-calendar-alt"></i> <strong>School Operational from:</strong> 10th February 2026</p>
         </div>
@@ -548,119 +489,10 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 INDIAN PUBLIC SCHOOL | Nursery to 8th | Established 2026, Muzaffarnagar</p>
+    <p>© 2026 INDIAN PUBLIC SCHOOL | Pre-School to Middle School (Nursery - Class 8) | Established 2026, Muzaffarnagar</p>
     <p><i class="fas fa-heart" style="color:#e67e22;"></i> Empowering young minds for a brighter tomorrow</p>
   </div>
 </footer>
 
-<!-- Modal for Admission Enrollment form (basic details + class selection) -->
-<div id="admissionModal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal" id="closeModalBtn">&times;</span>
-    <h3><i class="fas fa-user-graduate"></i> Admission Enquiry</h3>
-    <p>Fill basic details to enroll for session 2026-27</p>
-    <form id="admissionForm">
-      <div class="form-group">
-        <label>Full Name *</label>
-        <input type="text" id="studentName" placeholder="e.g. Abdullah Khan" required>
-      </div>
-      <div class="form-group">
-        <label>Parent / Guardian Name</label>
-        <input type="text" id="parentName" placeholder="Guardian name" required>
-      </div>
-      <div class="form-group">
-        <label>Class Seeking Admission *</label>
-        <select id="classSelect" required>
-          <option value="">-- Select Class --</option>
-          <option>Nursery</option>
-          <option>LKG</option>
-          <option>UKG</option>
-          <option>1st</option>
-          <option>2nd</option>
-          <option>3rd</option>
-          <option>4th</option>
-          <option>5th</option>
-          <option>6th</option>
-          <option>7th</option>
-          <option>8th</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Contact Number</label>
-        <input type="tel" id="contactNumber" placeholder="Mobile Number" required>
-      </div>
-      <div class="form-group">
-        <label>Email (optional)</label>
-        <input type="email" id="emailAdmission" placeholder="your@email.com">
-      </div>
-      <button type="submit" class="submit-enroll">Submit Enrollment Request</button>
-      <div id="formSuccessMsg" class="success-msg">✅ Thank you! Our team will contact you soon.</div>
-    </form>
-  </div>
-</div>
-
-<script>
-  // Modal logic
-  const modal = document.getElementById('admissionModal');
-  const enrollBtn = document.getElementById('enrollBtn');
-  const closeBtn = document.getElementById('closeModalBtn');
-
-  enrollBtn.onclick = () => {
-    modal.style.display = 'flex';
-  }
-
-  closeBtn.onclick = () => {
-    modal.style.display = 'none';
-  }
-
-  window.onclick = (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  }
-
-  // Handle form submission (just a demo simulation + store locally)
-  const form = document.getElementById('admissionForm');
-  const successDiv = document.getElementById('formSuccessMsg');
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Simple validation
-    const student = document.getElementById('studentName').value.trim();
-    const parent = document.getElementById('parentName').value.trim();
-    const classVal = document.getElementById('classSelect').value;
-    const phone = document.getElementById('contactNumber').value.trim();
-
-    if(!student || !parent || !classVal || !phone) {
-      alert('Please fill all required fields: Student Name, Parent Name, Class, Contact Number');
-      return;
-    }
-
-    if(phone.length < 10) {
-      alert('Please enter a valid 10-digit mobile number');
-      return;
-    }
-
-    // Show success message
-    successDiv.style.display = 'block';
-    // Optionally store to console / localStorage for demo
-    const enrollmentData = {
-      studentName: student,
-      parentName: parent,
-      desiredClass: classVal,
-      phone: phone,
-      email: document.getElementById('emailAdmission').value,
-      timestamp: new Date().toLocaleString()
-    };
-    console.log('Enrollment Data:', enrollmentData);
-    // Optional: save in localStorage to mimic record
-    let previousRecords = localStorage.getItem('ips_enrollments');
-    let enrollments = previousRecords ? JSON.parse(previousRecords) : [];
-    enrollments.push(enrollmentData);
-    localStorage.setItem('ips_enrollments', JSON.stringify(enrollments));
-
-    // Reset form after 2 seconds, but keep success visible
-    setTimeout(() => {
-      form.reset();
-      successDiv.style.displ
+</body>
+</html>
